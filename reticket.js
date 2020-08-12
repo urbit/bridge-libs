@@ -14,7 +14,7 @@ import {
   sendSignedTransaction,
 } from './txn';
 import getSuggestedGasPrice from './getSuggestedGasPrice';
-import { toBN } from 'web3-utils';
+import { toBN, toWei } from 'web3-utils';
 
 //TODO  eradicate
 const safeToWei = (num, source) => {
