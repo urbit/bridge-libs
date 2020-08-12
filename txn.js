@@ -1,5 +1,5 @@
 import Tx from 'ethereumjs-tx';
-import { toHex } from 'web3-utils';
+import { toHex, fromWei, toWei, toBN } from 'web3-utils';
 import retry from 'async-retry';
 
 import { ledgerSignTransaction } from './ledger';
