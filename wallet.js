@@ -42,9 +42,7 @@ export const addressFromSecp256k1Public = pub => {
     compressed
   );
   const chopped = uncompressed.slice(1); // chop parity byte
-  console.log('xa');
   const hashed = keccak256(chopped);
-  console.log('xb');
   const addr = addHexPrefix(hashed.slice(-20).toString('hex'));
   return toChecksumAddress(addr);
 };
@@ -95,25 +93,17 @@ export const walletFromMnemonic = (
   passphrase,
   skipMnemonicCheck
 ) => {
-  console.log('args', mnemonic, hdpath, passphrase, skipMnemonicCheck);
-
   const seed =
     skipMnemonicCheck || bip39.validateMnemonic(mnemonic)
       ? Just(bip39.mnemonicToSeed(mnemonic, passphrase))
       : Nothing();
 
-  console.log(seed);
-
   const toWallet = (sd, path) => {
     let wal;
     try {
-      console.log('fromseed', sd);
       const hd = bip32.fromSeed(sd);
-      console.log('a');
       wal = hd.derivePath(path);
-      console.log('b');
       wal.address = addressFromSecp256k1Public(wal.publicKey);
-      console.log('c');
       wal.passphrase = passphrase || '';
       wal = Just(wal);
     } catch (e) {
