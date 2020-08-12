@@ -1,10 +1,10 @@
 
 export default async function getSuggestedGasPrice(networkType, defaultGwei=40, maxGwei=80) {
-  switch (network.toUpperCase()) {
+  switch (networkType.toUpperCase()) {
     case 'ROPSTEN':  // xx network types
       return 10;
     case 'OFFLINE':  // xx network types
-      return DEFAULT_GAS_PRICE_GWEI;
+      return defaultGwei;
     case 'LOCAL':  // xx network types
     default:
       try {
