@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "description": "Things to use when interacting with Azimuth and Ethereum.",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urbit/bridge-libs.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
