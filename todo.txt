@@ -1,0 +1,5 @@
+- get rid of folktale/maybe dependency, especially for in/output
+- review structure
+- add tests
+- inline todos
+- convert to typescript?
